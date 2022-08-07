@@ -1,0 +1,136 @@
+<h1 class="welcome1">Welcome MS HARDWARE</h1>
+<section class="content">
+    <div class="container-fluid">
+      <!-- Info boxes -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Orders</span>
+              <span class="info-box-number">
+                {{ordercount}}
+                <small></small>
+              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Product</span>
+              <span class="info-box-number">{{productcount}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Sales</span>
+              <span class="info-box-number">{{salescount}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Customers</span>
+              <span class="info-box-number">{{customercount}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="controles-container">
+        <form [formGroup]="service.form" (submit)="onSubmit()" class="normal-form">
+          <mat-form-field>
+            <input type="number" formControlName="Sales_Id" matInput placeholder="Sales_Id">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="Order_Name" matInput placeholder="Order_Name">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+         <br>
+          <mat-form-field>
+            <input formControlName="Customer_Name" matInput placeholder="Customer_Name">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="Product_Name" matInput placeholder="Product_Name">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input type="number" formControlName="Quantity" matInput placeholder="Quantity">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+         
+          <mat-form-field>
+            <input type="number" formControlName="Unit_Price" matInput placeholder="Unit_Price">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+<br>
+          <mat-form-field>
+              <input formControlName="Sales_Date" matInput [matDatepicker]="picker" placeholder="Sales Date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        <div class="button-row">
+          <button mat-raised-button color="primary"  type="submit">Submit</button>
+          <button mat-raised-button color="warn" >Clear</button> 
+        </div>
+      </form>
+      </div>
+      <h1 style="color:red;margin-top: -30px;">6 Months Sales Prediction Price Is {{predictedVlaue}}: Rs</h1>
+      <!-- /.row -->
+
+      <!-- Main row -->
+              <mat-grid-list cols="2" rowHeight="300px">
+          <mat-grid-tile>
+          
+          </mat-grid-tile>
+          <mat-grid-tile>
+        
+          </mat-grid-tile>
+        </mat-grid-list>
+     
+      <!-- /.row -->
+    </div><!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+
+<!-- /.content-wrapper -->
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+
+<!-- Main Footer -->

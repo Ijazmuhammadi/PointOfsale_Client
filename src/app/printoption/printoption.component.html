@@ -1,0 +1,20 @@
+<div class="noprint" style="margin-left:100px;">
+    <h2>Generate Invoice</h2>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter Product Name" [(ngModel)]="orderName" >
+      </mat-form-field>
+ <button mat-raised-button (click)="clickSearchOrder()" data-toggle="modal" data-target="#exampleModal">
+   Search
+ </button>
+  </div>
+  
+<div style="margin-left: 100px;" *ngFor="let item of orderInvoice">
+<h1>MS Hardware</h1>
+<h2>Invoice # : {{item.orderId}}</h2>
+<h2>Product Details : {{item.productName}}</h2>
+<h2>Unit Price : {{item.unit_Price}}</h2>
+<h2>Quantity : {{item.quantity}}</h2>
+<h2>Total : {{item.sub_Total}}</h2>
+<h2>Date : {{item.order_Date | date }}</h2>
+<p>Thank you for coming</p>
+</div>
