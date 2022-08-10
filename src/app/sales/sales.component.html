@@ -18,7 +18,7 @@
 <div class="mat-elevation-z8">
   <div id="print-me">
     <mat-table matTableExporter [dataSource]="listData" #exporter="matTableExporter" [hiddenColumns]="[5]" matSort>
-
+      <button mat-button (click)="exporter.exportTable('xlsx')"></button>
       <ng-container matColumnDef="salesID">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Sales Id</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.salesID}}</mat-cell>

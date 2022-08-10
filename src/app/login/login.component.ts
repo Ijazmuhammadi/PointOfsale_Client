@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient,private router : Router,public service:LoginService,private toastr: ToastrService) { }
   loginForm: FormGroup = new FormGroup({
     //CustomerId: new FormControl(null),
-    UserName: new FormControl('', Validators.required),
-    Password: new FormControl('', [Validators.required]),
+    UserName: new FormControl('',),
+    Password: new FormControl('',),
    });
   
   ngOnInit(): void {
